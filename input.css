@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Whenever we add custom css, put it here */
+
+/* Replaced this with tailwind config backgroundImage extend > found in Q/A section */
+/* body { */
+  /* !! Tailwind will compile everything into ./assets/css/style.css
+    so when adding a path to some asset, you must get to the path from there */
+  /* background-image: url('../img/bg-header-desktop.png'); */
+  /* background-image: url('/assets/img/bg-header-desktop.png'); - this would work on a local env. but when on a server, / will start at the root of it, which is not our project folder */
+  /* background-repeat: no-repeat; */
+  /* background-size: contain; */
+/* } */
+
+/* @media (max-width: 576px) {
+  body {
+    background-image: url('../img/bg-header-mobile.png');
+  }
+} */
+
+@layer base {
+  h3 {
+    @apply mb-8 text-4xl font-bold text-darkGrayishBlue md:text-5xl;
+  }
+  h5 {
+    @apply mb-2 text-2xl font-bold text-darkGrayishBlue;
+  }
+}
+
+.section-container {
+  @apply max-w-6xl mx-auto text-center px-10;
+}
+
+.section-content {
+  @apply max-w-3xl mx-auto mb-10 text-xl leading-9 text-center text-grayishBlue;
+}
+
+.button-container {
+  @apply flex flex-col justify-center w-full space-y-6 text-xl text-white md:flex-row md:space-y-0 md:space-x-4;
+}
+
+.ficon:hover {
+  filter: invert(53%) sepia(68%) saturate(434%) hue-rotate(121deg) brightness(101%) contrast(94%);
+}
